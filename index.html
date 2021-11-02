@@ -4,8 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <audio id="os-intro" autoplay loop>
+      <source src="assets/os.ogg" type="audio/ogg" />
+    </audio>
     <title>SLP is my favourite way of feeling useless...</title>
     <style>
+      @keyframes weeee {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+
       html,
       body,
       img {
@@ -18,9 +30,39 @@
         object-fit: contain;
         transform: rotate(180deg);
       }
+
+      #dan {
+        animation: weeee 3s linear infinite;
+      }
+
+      #dan:not(.weeee) {
+        animation-play-state: paused;
+      }
+
+      .weeee {
+        animation-play-state: running;
+      }
     </style>
   </head>
   <body>
-    <img src="https://gruss.cc/portrait_small.jpg" alt="The one and only" />
+    <img
+      id="dan"
+      src="https://gruss.cc/portrait_small.jpg"
+      alt="The one and only"
+    />
+    <script>
+      let fun = false;
+      document.addEventListener("click", () => {
+        fun = !fun;
+
+        if (fun) {
+          document.getElementById("os-intro").play();
+          document.getElementById("dan").classList.add("weeee");
+        } else {
+          document.getElementById("os-intro").pause();
+          document.getElementById("dan").classList.remove("weeee");
+        }
+      });
+    </script>
   </body>
 </html>
