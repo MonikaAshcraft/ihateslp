@@ -4,18 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <audio id="os-intro" autoplay loop>
-      <source src="os.ogg" type="audio/ogg" />
+    <audio id="os-intro" loop>
+      <source src="assets/os.ogg" type="audio/ogg" />
     </audio>
     <title>SLP is my favourite way of feeling useless...</title>
     <style>
       @keyframes weeee {
         from {
-          transform: rotate(0deg);
+          transform: rotate(180deg);
         }
         to {
-          transform: rotate(360deg);
+          transform: rotate(540deg);
         }
+      }
+
+      body {
+        overflow: hidden;
       }
 
       html,
@@ -28,7 +32,6 @@
       }
       img {
         object-fit: contain;
-        transform: rotate(180deg);
       }
 
       #dan {
