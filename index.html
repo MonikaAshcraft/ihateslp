@@ -62,14 +62,18 @@
       src="https://gruss.cc/portrait_small.jpg"
       alt="The one and only"
     />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJXF1N9CPG"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-HJXF1N9CPG');
+      let fun = false;
+      document.addEventListener("click", () => {
+        fun = !fun;
+        if (fun) {
+          document.getElementById("os-intro").play();
+          document.getElementById("dan").classList.add("weeee");
+        } else {
+          document.getElementById("os-intro").pause();
+          document.getElementById("dan").classList.remove("weeee");
+        }
+      });
     </script>
   </body>
 </html>
