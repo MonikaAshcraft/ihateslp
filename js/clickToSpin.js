@@ -19,7 +19,7 @@ if (っ)
 if (ಥ_ಥ) {
   document.getElementsByTagName("form")[0].addEventListener("submit", (e) => {
     e.preventDefault();
-    window.location.href = `./${ಥ_ಥ.value.toLowerCase()}`;
+    window.location.href = `http://ihateslp.com/${ಥ_ಥ.value.toLowerCase()}`;
   });
 }
 
