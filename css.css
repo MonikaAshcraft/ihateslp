@@ -1,0 +1,55 @@
+@keyframes weeee {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+
+#root {
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+img {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+}
+.imgcont {
+  scroll-snap-align: start;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#dan {
+  animation: weeee 3s linear infinite;
+}
+
+#dan:not(.weeee) {
+  animation-play-state: paused;
+}
+
+.weeee {
+  animation-play-state: running;
+}
+
+.contamiation {
+  scroll-snap-align: start;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-content: center;
+}

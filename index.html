@@ -8,72 +8,43 @@
       <source src="os.ogg" type="audio/ogg" />
     </audio>
     <title>SLP is my favourite way of feeling useless...</title>
-    <style>
-      @keyframes weeee {
-        from {
-          transform: rotate(180deg);
-        }
-        to {
-          transform: rotate(540deg);
-        }
-      }
+    <link rel="stylesheet" href="css.css" />
+    <link rel="shortcut icon" href="./uwu/uwu.jpg" type="image/jpeg" />
 
-      body {
-        overflow: hidden;
-      }
-
-      html,
-      body,
-      img {
-        height: 100%;
-        width: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      img {
-        object-fit: contain;
-      }
-
-      #dan {
-        animation: weeee 3s linear infinite;
-      }
-
-      #dan:not(.weeee) {
-        animation-play-state: paused;
-      }
-
-      .weeee {
-        animation-play-state: running;
-      }
-    </style>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HJXF1N9CPG"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-HJXF1N9CPG"
+    ></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-      gtag('config', 'G-HJXF1N9CPG');
+      gtag("config", "G-HJXF1N9CPG");
     </script>
   </head>
   <body>
-    <img
-      id="dan"
-      src="https://gruss.cc/portrait_small.jpg"
-      alt="The one and only"
-    />
-    <script>
-      let fun = false;
-      document.addEventListener("click", () => {
-        fun = !fun;
-        if (fun) {
-          document.getElementById("os-intro").play();
-          document.getElementById("dan").classList.add("weeee");
-        } else {
-          document.getElementById("os-intro").pause();
-          document.getElementById("dan").classList.remove("weeee");
-        }
-      });
-    </script>
+    <div id="root">
+      <div class="imgcont">
+        <img
+          id="dan"
+          src="https://gruss.cc/portrait_small.jpg"
+          alt="The one and only"
+        />
+      </div>
+
+      <div class="contamiation">
+        <form>
+          <fieldset>
+            <legend>Where do you want to go?</legend>
+            <input type="text" name="where to book?" id="input" />
+          </fieldset>
+        </div>
+      </form>
+    </div>
+    <script src="./clickToSpin.js"></script>
   </body>
 </html>
