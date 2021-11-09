@@ -5,7 +5,7 @@ import "./App.css";
 
 export const App = () => {
   return (
-    <Router>
+    <Router basename="ihateslp">
       <Routes>
         <Route path="/" element={<Page page="default" />} />
         {pageNames.map((name) => (
