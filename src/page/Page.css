@@ -1,0 +1,38 @@
+@keyframes spin {
+  from {
+    transform: rotate(180deg);
+  }
+  to {
+    transform: rotate(540deg);
+  }
+}
+
+.page {
+  height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.page-image-wrapper,
+.page-form {
+  scroll-snap-align: start;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page-image-wrapper {
+  overflow: hidden;
+}
+
+.page-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  animation: spin 3s linear infinite;
+  animation-play-state: paused;
+}
+
+.page-image.spinning {
+  animation-play-state: running;
+}

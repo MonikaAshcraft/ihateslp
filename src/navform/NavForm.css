@@ -1,0 +1,51 @@
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.page-form {
+  display: grid;
+  place-content: center;
+}
+
+.page-form > * {
+  max-width: 15rem;
+}
+
+.page-formbox {
+  padding: 1rem;
+  border-radius: 0.25rem;
+  background-color: rgb(0, 255, 170);
+  border: 1px solid rgb(21, 156, 111);
+  box-shadow: 0 5px 16px 0px #00000050;
+}
+
+.page-formbox > input {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 0.2rem;
+  margin-top: 0.25rem;
+}
+
+.page-warning {
+  opacity: 0;
+  background-color: red;
+  color: white;
+  padding: 0.5rem 0;
+  text-align: center;
+  margin-top: 0.25rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 5px 16px 0px #00000050;
+}
+
+.page-warning.visible {
+  animation: disappear 3s linear;
+}
