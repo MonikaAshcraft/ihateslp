@@ -43,7 +43,7 @@ export const Page = ({ page }: Props) => {
             onClick={togglePlaying}
           />
         </div>
-        <NavForm />
+        <NavForm page={page} />
       </div>
     </>
   );

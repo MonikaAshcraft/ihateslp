@@ -1,10 +1,15 @@
 import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { getRandomError } from "../data/errors";
-import { isPageName } from "../data/pages";
+import { isPageName, PageName, pages, sanitizePageName } from "../data/pages";
 import "./NavForm.css";
 
-export const NavForm = () => {
+type Props = {
+  page: PageName;
+};
+
+export const NavForm = (props: Props) => {
+  const { foreground, textColor } = pages[props.page];
   const navigate = useNavigate();
   const [newPageName, setNewPageName] = useState("");
   const [showError, setShowError] = useState(false);
@@ -18,8 +23,9 @@ export const NavForm = () => {
   const handleSubmit = useCallback(
     (event) => {
       event.preventDefault();
-      if (isPageName(newPageName)) {
-        navigate(`../${newPageName}`);
+      const sanitizedPageName = sanitizePageName(newPageName);
+      if (isPageName(sanitizedPageName)) {
+        navigate(`../${sanitizedPageName}`);
         window.scrollTo(0, 0);
         window.location.reload();
       } else {
@@ -32,7 +38,10 @@ export const NavForm = () => {
 
   return (
     <form className="page-form" onSubmit={handleSubmit}>
-      <div className="page-formbox">
+      <div
+        className="page-formbox"
+        style={{ backgroundColor: foreground, color: textColor }}
+      >
         <span id="destination-input-label">Where do you want to go?</span>
         <br />
         <input
@@ -40,6 +49,7 @@ export const NavForm = () => {
           type="text"
           value={newPageName}
           onChange={handleNewPageNameChange}
+          style={{ borderColor: textColor }}
         />
       </div>
 
